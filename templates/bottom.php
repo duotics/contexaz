@@ -1,3 +1,4 @@
+<?php $dataContact = get_config("data", "contact"); ?>
 <!--*********************************************************************************************************-->
 <!--************ FOOTER *************************************************************************************-->
 <!--*********************************************************************************************************-->
@@ -16,19 +17,20 @@
                         <address>
                             <figure>
                                 <strong>CONTEXAZ</strong><br>
-                                3 de Noviembre 6-15 entre Rivera y Luis Cordero Azogues, Cañar, Ecuador
+                                <?php echo $dataContact["address"] ?? null ?><br>
+                                <?php echo $dataContact["location"] ?? null ?>
                             </figure>
                             <br>
                             <figure>
                                 <div class="font-weight-bold">Email:</div>
-                                <a href="mailto:info@contexaz.com">info@contexaz.net</a>
+                                <a href="mailto:info@contexaz.com"><?php echo $dataContact["email"] ?? null ?></a>
                             </figure>
                             <figure>
                                 <div class="font-weight-bold">Teléfono:</div>
-                                098 462 4551
+                                <?php echo $dataContact["whatsapp"] ?? null ?>
                             </figure>
                             <div class="font-weight-bold">Oficina:</div>
-                            (07) 2242-120
+                            <?php echo $dataContact["phone"] ?? null ?>
                         </address>
                         <!--end address-->
                     </div>

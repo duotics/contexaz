@@ -9,4 +9,4 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__); //Dotenv Init
 $dotenv->load(); //Dotenv Loadvard
 
 //Configurations, load system vars and paths vars
-include("configs/config.php");
+include("config/config.php");

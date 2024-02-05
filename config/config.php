@@ -31,7 +31,7 @@ setlocale(LC_ALL, "es_EC");
 setlocale(LC_TIME, "es_EC");
 
 //LOAD CONFIGURACIONS
-define("cfg", $cfg = startConfigs("cfg"));
+define("cfg", startConfigs(array("data","system")));
 
 //VARS FOR DATE AND TIME
 $dateFormat = new IntlDateFormatter('es_ES', IntlDateFormatter::LONG, IntlDateFormatter::NONE);

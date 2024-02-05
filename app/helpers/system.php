@@ -13,10 +13,17 @@ function dep($data, $tit = null)
     return $format;
 }
 
-function get_config($string, $section)
+function get_config($section, $group, $string = null)
 {
-    return (isset(cfg[$section][$string])) ? cfg[$section][$string] : "{{{$section}}}";
-
+    if (isset(cfg[$section][$group])) {
+        if ($string !== null && isset(cfg[$section][$group][$string])) {
+            return cfg[$section][$group][$string]; // Devuelve el valor específico del elemento.
+        } else {
+            return cfg[$section][$group]; // Devuelve el grupo completo como un array u objeto.
+        }
+    } else {
+        return "{{{$section}}}"; // Manejo de error o valor predeterminado si la sección o el grupo no existen.
+    }
 }
 
 function removeSpecialChars(string $texto): string
@@ -25,20 +32,27 @@ function removeSpecialChars(string $texto): string
 }
 
 if (!function_exists('startConfigs')) {
-    function startConfigs($name)
+    function startConfigs(array $configs)
     {
         $ret = null;
-        if (!isset($_SESSION[$name])) {
-            $conf = parse_ini_file(root['c'] . "{$name}.ini", TRUE);
-            foreach ($conf as $x => $xval) {
-                foreach ($xval as $y => $yval)
-                    $configEnd[$x][$y] = $yval;
+        $configVersion = $_SESSION["cfg"]["version"] ?? null;
+        $appVersion = $_ENV['VERSION'];
+        $isVersionChange = ($configVersion != $appVersion) ? true : false;
+        if ($isVersionChange) unset($_SESSION["cfg"]);
+        foreach ($configs as $name) {
+            if (!isset($_SESSION["cfg"][$name]) || ($isVersionChange)) {
+                echo "No existe SESSION CFG {$name}<br>";
+                $conf = parse_ini_file(root['c'] . "config.d/{$name}.ini", TRUE);
+                $configEnd = null;
+                foreach ($conf as $x => $xval) {
+                    foreach ($xval as $y => $yval)
+                        $configEnd[$x][$y] = $yval;
+                }
+                $_SESSION["cfg"][$name] = $configEnd;
             }
-            $_SESSION[$name] = $configEnd;
-            $ret = $configEnd;
-        } else {
-            $ret = $_SESSION[$name];
         }
+        $_SESSION["cfg"]['version'] = $appVersion;
+        $ret = $_SESSION["cfg"];
         return $ret;
     }
 }
@@ -118,43 +132,43 @@ function vImg($ruta, $nombre, $thumb = TRUE, $pthumb = 't_', $retHtml = [])
 
 function changeDateEnglishToSpanish($fecha = null, $option = "all")
 {
-	if (!$fecha) $fecha = date("l, j \\d\\e F \\d\\e Y");
-	$nuevafecha = null;
-	$spanish_days = array(
-		'Monday' => 'Lunes',
-		'Tuesday' => 'Martes',
-		'Wednesday' => 'Miércoles',
-		'Thursday' => 'Jueves',
-		'Friday' => 'Viernes',
-		'Saturday' => 'Sábado',
-		'Sunday' => 'Domingo'
-	);
+    if (!$fecha) $fecha = date("l, j \\d\\e F \\d\\e Y");
+    $nuevafecha = null;
+    $spanish_days = array(
+        'Monday' => 'Lunes',
+        'Tuesday' => 'Martes',
+        'Wednesday' => 'Miércoles',
+        'Thursday' => 'Jueves',
+        'Friday' => 'Viernes',
+        'Saturday' => 'Sábado',
+        'Sunday' => 'Domingo'
+    );
 
-	$spanish_months = array(
-		'January' => 'enero',
-		'February' => 'febrero',
-		'March' => 'marzo',
-		'April' => 'abril',
-		'May' => 'mayo',
-		'June' => 'junio',
-		'July' => 'julio',
-		'August' => 'agosto',
-		'September' => 'septiembre',
-		'October' => 'octubre',
-		'November' => 'noviembre',
-		'December' => 'diciembre'
-	);
-	switch ($option) {
-		case "day":
-			$nuevafecha = strtr($fecha, $spanish_days);
-			break;
-		case "month":
-			$nuevafecha = strtr($fecha, $spanish_months);
-			break;
-		case "all":
-			$nuevafecha = strtr($fecha, $spanish_days);
-			$nuevafecha = strtr($nuevafecha, $spanish_months);
-			break;
-	}
-	return $nuevafecha;
+    $spanish_months = array(
+        'January' => 'enero',
+        'February' => 'febrero',
+        'March' => 'marzo',
+        'April' => 'abril',
+        'May' => 'mayo',
+        'June' => 'junio',
+        'July' => 'julio',
+        'August' => 'agosto',
+        'September' => 'septiembre',
+        'October' => 'octubre',
+        'November' => 'noviembre',
+        'December' => 'diciembre'
+    );
+    switch ($option) {
+        case "day":
+            $nuevafecha = strtr($fecha, $spanish_days);
+            break;
+        case "month":
+            $nuevafecha = strtr($fecha, $spanish_months);
+            break;
+        case "all":
+            $nuevafecha = strtr($fecha, $spanish_days);
+            $nuevafecha = strtr($nuevafecha, $spanish_months);
+            break;
+    }
+    return $nuevafecha;
 }
