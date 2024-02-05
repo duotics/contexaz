@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php echo route['a'] ?>font-awesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="<?php echo route['a'] ?>css/style.css">
     <link rel="stylesheet" href="<?php echo route['a'] ?>css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo route['a'] ?>css/custom.css">
     <title><?php echo get_config('title', 'system') ?></title>
 
 </head>

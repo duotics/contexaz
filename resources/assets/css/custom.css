@@ -1,0 +1,19 @@
+.to-top
+{
+  display: inline-block;
+  padding: 20px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  color: #28a745;
+  background: #eee;
+  transition: all 0.5s ease;
+  webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.logo-img{
+    max-height: 90px;
+}

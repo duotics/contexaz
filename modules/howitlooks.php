@@ -1,5 +1,5 @@
 <!--HOW IT LOOKS ****************************************************************************************-->
-<section id="how-it-looks" class="pb-0 ts-block text-center ts-overflow__hidden ts-shape-mask__down" data-bg-color="#ededed" data-bg-image="<?php echo route['a'] ?>img/bg-blurred-shape.jpg" data-bg-repeat="no-repeat" data-bg-position="bottom" data-bg-size="inherit">
+<section id="how-it-looks" class="pb-0 ts-block text-center ts-overflow__hidden ts-shape-mask__down" data-bg-color="#ededed" data-bg-image="<?php echo route['a'] ?>img/bg-blurred-shape-01.jpg" data-bg-repeat="no-repeat" data-bg-position="bottom" data-bg-size="inherit">
     <div class="container">
         <div class="ts-title">
             <h2>Quienes somos</h2>
