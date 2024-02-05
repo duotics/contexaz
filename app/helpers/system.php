@@ -36,12 +36,11 @@ if (!function_exists('startConfigs')) {
     {
         $ret = null;
         $configVersion = $_SESSION["cfg"]["version"] ?? null;
-        $appVersion = $_ENV['VERSION'];
+        $appVersion = $_ENV['VERSION'] ?? null;
         $isVersionChange = ($configVersion != $appVersion) ? true : false;
         if ($isVersionChange) unset($_SESSION["cfg"]);
         foreach ($configs as $name) {
             if (!isset($_SESSION["cfg"][$name]) || ($isVersionChange)) {
-                echo "No existe SESSION CFG {$name}<br>";
                 $conf = parse_ini_file(root['c'] . "config.d/{$name}.ini", TRUE);
                 $configEnd = null;
                 foreach ($conf as $x => $xval) {
