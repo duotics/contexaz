@@ -1,4 +1,5 @@
 <?php
+$body = null;
 mb_internal_encoding("UTF-8");
 
 $to = 'info@contexaz.net';
