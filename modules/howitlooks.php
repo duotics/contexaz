@@ -27,10 +27,10 @@
 
         <div class="tab-content pt-5 ts-tabs-presentation" id="myTabContent" data-animate="ts-fadeInUp">
             <div class="tab-pane fade show active" id="desktop" role="tabpanel" aria-labelledby="desktop">
-                <img src="<?php echo route['a'] ?>img/img-mision.png" class="mw-100" alt="">
+                <img src="<?php echo route['a'] ?>img/img-mision-01.jpg" class="mw-100" alt="">
             </div>
             <div class="tab-pane fade" id="tablet" role="tabpanel" aria-labelledby="tablet">
-                <img src="<?php echo route['a'] ?>img/img-vision.png" class="mw-100" alt="">
+                <img src="<?php echo route['a'] ?>img/img-vision-01.jpg" class="mw-100" alt="">
             </div>
             <div class="tab-pane fade" id="mobile" role="tabpanel" aria-labelledby="mobile">
                 <img src="<?php echo route['a'] ?>img/img-valores.png" class="mw-100" alt="">

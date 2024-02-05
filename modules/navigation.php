@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top ts-separate-bg-element" data-bg-color="#fff">
     <div class="container">
         <a class="navbar-brand" href="#page-top">
-            <img src="<?php echo route['a'] ?>img/logo-A-03.jpg" alt="" class="logo-img">
+            <img src="<?php echo route['a'] ?>img/logo-A-280x120.png" alt="" class="logo-img">
         </a>
         <!--end navbar-brand-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
