@@ -17,3 +17,7 @@
 .logo-img{
     max-height: 90px;
 }
+.ts-inputs__transparent input, .ts-inputs__transparent textarea {
+  background-color: #fff !important;
+  color: #333 !important;
+}
