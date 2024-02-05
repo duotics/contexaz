@@ -349,7 +349,7 @@ $(document).ready(function($) {
                 $button.addClass("processing");
                 $.post( pathToPhp, $form.serialize(),  function(response) {
                     $button.addClass("done").find(".status").append(response).prop("disabled", true);
-                    $button.disabled=true;
+                    document.getElementById("form-contact-submit").disabled = true;
                 });
                 return false;
             }
