@@ -21,6 +21,7 @@
 <!--Google map-->
 
 <script>
+    /*
     var latitude = 34.038405;
     var longitude = -117.946944;
     var markerImage = "<?php echo route['a'] ?>img/map-marker.png";
@@ -85,6 +86,7 @@
         }]
     }];
     google.maps.event.addDomListener(window, 'load', simpleMap(latitude, longitude, markerImage, mapStyle, mapElement));
+    */
 </script>
 
 </body>
