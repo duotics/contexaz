@@ -349,6 +349,7 @@ $(document).ready(function($) {
                 $button.addClass("processing");
                 $.post( pathToPhp, $form.serialize(),  function(response) {
                     $button.addClass("done").find(".status").append(response).prop("disabled", true);
+                    $button.disabled=true;
                 });
                 return false;
             }
