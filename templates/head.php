@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="ThemeStarz">
+    <meta name="author" content="duotics">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600">
     <link rel="stylesheet" href="<?php echo route['a'] ?>bootstrap/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo route['a'] ?>font-awesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="<?php echo route['a'] ?>css/style.css">
     <link rel="stylesheet" href="<?php echo route['a'] ?>css/owl.carousel.min.css">
-    <title>AppStorm - Application Startup HTML Template</title>
+    <title><?php echo get_config('title', 'system') ?></title>
 
 </head>
 

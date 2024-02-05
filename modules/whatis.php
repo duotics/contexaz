@@ -2,21 +2,21 @@
 <section id="what-is-appstorm" class="ts-block">
     <div class="container">
         <div class="ts-title">
-            <h2>What Is AppStorm?</h2>
+            <h2>Sobre CONTEXAZ</h2>
         </div>
         <!--end ts-title-->
         <div class="row">
             <div class="col-md-5 col-xl-5" data-animate="ts-fadeInUp" data-offset="100">
                 <p>
-                    Vivamus fermentum magna non faucibus dignissim. Sed a venenatis mi, vel tempus neque.
-                    Fusce pharetra, diam in hendrerit facilisis, enim diam cursus augue, egestas egestas
-                    purus diam at felis. Nullam tellus turpis, molestie ac urna quis, pulvinar semper massa.
+                    Somos una empresa de producción textil, con sede en la ciudad de Azogues,
+                    provincia de Cañár en el diverso colorido y multicultural país Ecuador.
                 </p>
                 <p>
-                    Nam tristique Sed nisl justo, commodo ac gravida vitae, sodales maximus erat. Phasellus
-                    euismod nunc metus, et posuere elit venenatis eget. Nunc non risus libero.
+                    Trabajamos con altos estándares de calidad y maquinaria de última tecnología
+                    además de un equipo de trabajo altamente capacitado logrando un proceso productivo ideal
+                    para obtener los mejores productos para nuestros clientes.
                 </p>
-                <a href="#download" class="btn btn-primary mb-4 ts-scroll">Download Now!</a>
+                <a href="#contact" class="btn btn-primary mb-4 ts-scroll">Contáctenos!</a>
             </div>
             <!--end col-xl-5-->
             <div class="col-md-7 col-xl-7 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">

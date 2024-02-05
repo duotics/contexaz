@@ -5,19 +5,19 @@
         <!--block of logos-->
         <div class="d-block d-md-flex justify-content-between align-items-center text-center ts-partners ">
             <a href="#">
-                <img src="<?php echo route['a'] ?>img/logo-01.png" alt="">
+                <img src="<?php echo route['d'] ?>partners/part-01.png" alt="">
             </a>
             <a href="#">
-                <img src="<?php echo route['a'] ?>img/logo-02.png" alt="">
+                <img src="<?php echo route['d'] ?>partners/part-02.png" alt="">
             </a>
             <a href="#">
-                <img src="<?php echo route['a'] ?>img/logo-03.png" alt="">
+                <img src="<?php echo route['d'] ?>partners/part-03.png" alt="">
             </a>
             <a href="#">
-                <img src="<?php echo route['a'] ?>img/logo-04.png" alt="">
+                <img src="<?php echo route['d'] ?>partners/part-04.png" alt="">
             </a>
             <a href="#">
-                <img src="<?php echo route['a'] ?>img/logo-05.png" alt="">
+                <img src="<?php echo route['d'] ?>partners/part-05.png" alt="">
             </a>
         </div>
         <!--end logos-->

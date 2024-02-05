@@ -2,7 +2,7 @@
 Project:	    AppStorm
 Version:        1.0.0
 
-Default Color   #f26d7d;
+Default Color   #1b1464;
 
 Body copy:		'Poppins', sans-serif; 15px;
 Headers:		'Poppins', sans-serif;
@@ -298,7 +298,7 @@ B. Helpers
 }
 
 .ts-font-color__primary {
-    color: #f26d7d;
+    color: #FF5E00;
 }
 
 /*-------------------------------------------
@@ -698,7 +698,7 @@ B. Helpers
 -------------------------------------------*/
 
 a {
-    color: #f26d7d;
+    color: #FF5E00;
     transition: .3s ease;
 }
 
@@ -943,7 +943,7 @@ blockquote figure aside i {
 }
 
 blockquote figure aside svg {
-    fill: #f26d7d;
+    fill: #FF5E00;
 }
 
 blockquote p {
@@ -1081,14 +1081,14 @@ blockquote h6 {
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     /*background-color: darken( var(--color-primary), 20% );
     border-color: darken( var(--color-primary), 20% );*/
-    background-color: #f26d7d;
-    border-color: #f26d7d;
+    background-color: #FF5E00;
+    border-color: #FF5E00;
     box-shadow: .125rem .1875rem .9375rem rgba(0, 0, 0, .3);
 }
 
 .btn-primary {
-    background-color: #f26d7d;
-    border-color: #f26d7d;
+    background-color: #FF5E00;
+    border-color: #FF5E00;
     color: #fff;
 }
 
@@ -1119,18 +1119,18 @@ blockquote h6 {
 }
 
 .btn-outline-primary {
-    border-color: #f26d7d;
-    color: #f26d7d;
+    border-color: #FF5E00;
+    color: #FF5E00;
 }
 
 .btn-outline-primary:hover {
-    background-color: #f26d7d;
-    border-color: #f26d7d;
+    background-color: #FF5E00;
+    border-color: #FF5E00;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus {
-    background-color: #f26d7d;
-    border-color: #f26d7d;
+    background-color: #FF5E00;
+    border-color: #FF5E00;
     box-shadow: 0 0 0 .2rem rgba(242, 109, 125, .5);
 }
 
@@ -1334,7 +1334,7 @@ hr {
 }
 
 .ts-item-header .icon .step {
-    background-color: #f26d7d;
+    background-color: #FF5E00;
     bottom: 0;
     box-shadow: .125rem .1875rem .9375rem rgba(0, 0, 0, .15);
     border-radius: 50%;
@@ -1524,13 +1524,13 @@ iframe div {
 
 .progress {
     background-color: transparent;
-    border: .125rem solid #f26d7d;
+    border: .125rem solid #FF5E00;
     border-radius: 0;
     height: .625rem;
 }
 
 .progress .progress-bar {
-    background-color: #f26d7d;
+    background-color: #FF5E00;
 }
 
 /*-------------------------------------------
@@ -1552,7 +1552,7 @@ iframe div {
 .ts-promo-number .ts-promo-number-divider:after {
     content: "";
     bottom: 0;
-    border: .125rem solid #f26d7d;
+    border: .125rem solid #FF5E00;
     border-radius: 50%;
     height: .625rem;
     margin: auto;
@@ -1646,7 +1646,7 @@ select::-ms-expand {
 .nav-tabs .nav-link.active {
     color: #191919;
     background-color: transparent;
-    border-bottom: .1875rem solid #f26d7d;
+    border-bottom: .1875rem solid #FF5E00;
     opacity: 1;
 }
 
@@ -1941,12 +1941,12 @@ E. Template Specific Elements
 }
 
 .ts-time-line__horizontal .ts-time-line__item.ts-time-line__milestone .ts-box {
-    background-color: #f26d7d;
+    background-color: #FF5E00;
     color: #fff;
 }
 
 .ts-time-line__horizontal .ts-time-line__item.ts-time-line__milestone .ts-box:after {
-    border-color: #f26d7d transparent transparent transparent;
+    border-color: #FF5E00 transparent transparent transparent;
 }
 
 .ts-time-line__horizontal .ts-time-line__item.ts-time-line__milestone h5 {
