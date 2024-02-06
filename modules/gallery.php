@@ -1,5 +1,5 @@
 <?php
-$galleryData = getImageNamesFromDirectory(root['d'] . "gallery", true);
+$galleryData = getImageNamesFromDirectory("data/gallery/", true);
 ?>
 <section id="gallery" class="ts-block ts-shape-mask__up" data-bg-color="#f7f7f7" data-bg-image="<?php echo route['a'] ?>img/bg-shapes-02.jpg" data-bg-size="cover" data-bg-repeat="repeat">
     <div class="ts-title text-center">

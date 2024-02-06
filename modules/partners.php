@@ -1,5 +1,5 @@
 <?php
-$partnersData = getImageNamesFromDirectory(root['d'] . "partners", true);
+$partnersData = getImageNamesFromDirectory("data/partners/", true);
 ?>
 <!--PARTNERS ********************************************************************************************-->
 <section id="partners" class="py-10 ts-block text-center" data-bg-color="#f6f6f6">

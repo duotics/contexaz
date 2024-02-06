@@ -16,12 +16,14 @@ function getImageNamesFromDirectory($directorio, $shuffle = false): array
 {
     $patrones = ['*.jpg', '*.png', '*.gif', '*.webp'];
     $nombresDeImagenes = [];
+    $directorioServer = rootM . $directorio;
+    $directorioNav = routeM . $directorio;
 
     foreach ($patrones as $patron) {
         // glob() busca archivos que coinciden con el patrón
-        foreach (glob($directorio . '/' . $patron) as $archivo) {
+        foreach (glob($directorioServer . '/' . $patron) as $archivo) {
             // basename() obtiene el nombre del archivo desde la ruta completa
-            $nombresDeImagenes[] = $archivo;
+            $nombresDeImagenes[] = $directorioNav . basename($archivo);
         }
     }
     if ($shuffle) {
