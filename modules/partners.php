@@ -1,27 +1,31 @@
+<?php
+$partnersData = getImageNamesFromDirectory(root['d'] . "partners", true);
+?>
 <!--PARTNERS ********************************************************************************************-->
-<section id="partners" class="py-5 ts-block" data-bg-color="#f6f6f6">
+<section id="partners" class="py-10 ts-block text-center" data-bg-color="#f6f6f6">
     <!--container-->
-    <div class="container">
-        <!--block of logos-->
-        <div class="d-block d-md-flex justify-content-between align-items-center text-center ts-partners ">
-            <a href="#">
-                <img src="<?php echo route['d'] ?>partners/part-01.png" alt="">
-            </a>
-            <a href="#">
-                <img src="<?php echo route['d'] ?>partners/part-02.png" alt="">
-            </a>
-            <a href="#">
-                <img src="<?php echo route['d'] ?>partners/part-03.png" alt="">
-            </a>
-            <a href="#">
-                <img src="<?php echo route['d'] ?>partners/part-04.png" alt="">
-            </a>
-            <a href="#">
-                <img src="<?php echo route['d'] ?>partners/part-05.png" alt="">
-            </a>
+    <div class="container-fluid">
+        <div class="ts-title">
+            <h2>Galeria de Clientes</h2>
         </div>
-        <!--end logos-->
-    </div>
-    <!--end container-->
+        <!--block of logos-->
+        <?php if (count($partnersData) > 0) { ?>
+            <div class="px-5">
+                <div class="card-deck">
+                    <!--beg of logos-->
+                    <?php foreach ($partnersData as $partner) { ?>
+                        <div class="card p-1">
+                            <img src="<?php echo $partner ?>" class="card-img-top" alt="...">
+                        </div>
+                    <?php } ?>
+                    <!--end of logos-->
+                </div>
+            </div>
+        <?php } else { ?>
+            <div>
+                <p class="lead">No data</p>
+            </div>
+        <?php } ?>
+        <!--end container-->
 </section>
 <!--END PARTNERS ****************************************************************************************-->

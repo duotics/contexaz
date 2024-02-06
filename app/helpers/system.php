@@ -12,6 +12,23 @@ function dep($data, $tit = null)
     $format = print_r("<- | END Debug ></small></div>");
     return $format;
 }
+function getImageNamesFromDirectory($directorio, $shuffle = false): array
+{
+    $patrones = ['*.jpg', '*.png', '*.gif', '*.webp'];
+    $nombresDeImagenes = [];
+
+    foreach ($patrones as $patron) {
+        // glob() busca archivos que coinciden con el patrón
+        foreach (glob($directorio . '/' . $patron) as $archivo) {
+            // basename() obtiene el nombre del archivo desde la ruta completa
+            $nombresDeImagenes[] = $archivo;
+        }
+    }
+    if ($shuffle) {
+        shuffle($nombresDeImagenes);
+    }
+    return $nombresDeImagenes;
+}
 
 function get_config($section, $group, $string = null)
 {

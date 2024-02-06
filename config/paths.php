@@ -7,7 +7,7 @@ define('root', array(
     'c' => rootM . 'config/',
     't' => rootM . 'templates/',
     'a' => rootM . 'resources/assets/',
-    'i' => rootM . 'resources/images'
+    'i' => rootM . 'resources/images/'
 ));
 //Paths url
 define('routeM', $_ENV['APP_URL']); //Main Main URL App, defined in .env
@@ -17,6 +17,6 @@ define('route', array(
     'c' => routeM . 'config/',
     't' => routeM . 'frames/',
     'a' => routeM . 'resources/assets/',
-    'i' => routeM . 'resources/images'
+    'i' => routeM . 'resources/images/'
 ));
 $route = route;
