@@ -1,7 +1,7 @@
 <!--NAVIGATION ******************************************************************************************-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top ts-separate-bg-element" data-bg-color="#fff">
     <div class="container">
-        <a class="navbar-brand" href="#page-top">
+        <a class="navbar-brand" href="<?php echo get_config('data', 'menu', 'home-link') ?>">
             <img src="<?php echo route['a'] ?>img/logo-A-280x120.png" alt="" class="logo-img">
         </a>
         <!--end navbar-brand-->
@@ -11,11 +11,11 @@
         <!--end navbar-toggler-->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active ts-scroll" href="#page-top">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link ts-scroll" href="#how-it-works">Que Hacemos</a>
-                <a class="nav-item nav-link ts-scroll" href="#how-it-looks">La Empresa</a>
-                <a class="nav-item nav-link ts-scroll" href="#gallery">Noticias</a>
-                <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto" href="#form-contact">Contáctenos</a>
+                <a class="nav-item nav-link active ts-scroll" href="<?php echo get_config('data', 'menu', 'home-link') ?>"><?php echo get_config('data', 'menu', 'home') ?></a>
+                <a class="nav-item nav-link ts-scroll" href="<?php echo get_config('data', 'menu', 'do-link') ?>"><?php echo get_config('data', 'menu', 'do') ?></a>
+                <a class="nav-item nav-link ts-scroll" href="<?php echo get_config('data', 'menu', 'somos-link') ?>"><?php echo get_config('data', 'menu', 'somos') ?></a>
+                <a class="nav-item nav-link ts-scroll" href="<?php echo get_config('data', 'menu', 'news-link') ?>"><?php echo get_config('data', 'menu', 'news') ?></a>
+                <a class="nav-item nav-link ts-scroll" href="<?php echo get_config('data', 'menu', 'cont-link') ?>"><?php echo get_config('data', 'menu', 'cont') ?></a>
             </div>
             <!--end navbar-nav-->
         </div>

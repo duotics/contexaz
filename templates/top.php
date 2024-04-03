@@ -13,8 +13,8 @@
         <div class="row align-items-center">
             <div class="col-sm-7">
                 <h3 class="ts-font-color__black ts-opacity__50">Fabricamos todo tipo de uniforme!</h3>
-                <h1>CONTEXAZ</h1>
-                <h2 class="mb-3">La casa del uniforme</h2>
+                <h1><?php echo get_config('data', 'system', 'company') ?></h1>
+                <h2 class="mb-3"><?php echo get_config('data', 'system', 'slogan') ?></h2>
                 <br>
                 <a href="#how-it-works" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#1b1464">Mas información</a>
             </div>

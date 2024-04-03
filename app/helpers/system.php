@@ -34,14 +34,19 @@ function getImageNamesFromDirectory($directorio, $shuffle = false): array
 
 function get_config($section, $group, $string = null)
 {
+    // Verificar si la sección y el grupo existen.
     if (isset(cfg[$section][$group])) {
-        if ($string !== null && isset(cfg[$section][$group][$string])) {
-            return cfg[$section][$group][$string]; // Devuelve el valor específico del elemento.
+        // Si se ha proporcionado un valor para $string, buscar ese valor específico.
+        if ($string !== null) {
+            // Devuelve el valor específico si existe, de lo contrario devuelve null.
+            return cfg[$section][$group][$string] ?? null;
         } else {
-            return cfg[$section][$group]; // Devuelve el grupo completo como un array u objeto.
+            // Si $string no se proporciona, devuelve todo el grupo como un array.
+            return cfg[$section][$group];
         }
     } else {
-        return "{{{$section}}}"; // Manejo de error o valor predeterminado si la sección o el grupo no existen.
+        // Devuelve null si la sección o el grupo no existen.
+        return null;
     }
 }
 
@@ -53,13 +58,20 @@ function removeSpecialChars(string $texto): string
 if (!function_exists('startConfigs')) {
     function startConfigs(array $configs)
     {
-        $ret = null;
+        $currentTime = time(); // Tiempo actual en segundos.
+        $configLoadTime = $_SESSION["cfg"]["load_time"] ?? 0; // Tiempo en el que la configuración fue cargada por última vez.
+        $timeElapsed = ($currentTime - $configLoadTime) > ($_ENV["TIME_RELOAD_CONFIG"] ?? 60); // Verifica si han pasado más de 5 minutos.
+
         $configVersion = $_SESSION["cfg"]["version"] ?? null;
         $appVersion = $_ENV['VERSION'] ?? null;
-        $isVersionChange = ($configVersion != $appVersion) ? true : false;
-        if ($isVersionChange) unset($_SESSION["cfg"]);
+        $isVersionChange = ($configVersion != $appVersion);
+
+        // Verifica si es necesario actualizar la configuración debido a un cambio de versión o porque el tiempo de vida útil ha expirado.
+        if ($isVersionChange || $timeElapsed) unset($_SESSION["cfg"]);
+
         foreach ($configs as $name) {
-            if (!isset($_SESSION["cfg"][$name]) || ($isVersionChange)) {
+            // Recarga la configuración si es necesario.
+            if (!isset($_SESSION["cfg"][$name]) || $isVersionChange || $timeElapsed) {
                 $conf = parse_ini_file(root['c'] . "config.d/{$name}.ini", TRUE);
                 $configEnd = null;
                 foreach ($conf as $x => $xval) {
@@ -69,11 +81,15 @@ if (!function_exists('startConfigs')) {
                 $_SESSION["cfg"][$name] = $configEnd;
             }
         }
+
+        // Actualiza la versión de la configuración y el tiempo de carga.
         $_SESSION["cfg"]['version'] = $appVersion;
-        $ret = $_SESSION["cfg"];
-        return $ret;
+        $_SESSION["cfg"]['load_time'] = $currentTime; // Registra el tiempo actual como el nuevo tiempo de carga.
+
+        return $_SESSION["cfg"];
     }
 }
+
 
 function getRealIpAddress(): string
 {
